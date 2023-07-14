@@ -1,0 +1,33 @@
+{
+  "name": "cypress-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CassieRyu/Cypress-Cucumber.git"
+  },
+  "author": "shan liu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CassieRyu/Cypress-Cucumber/issues"
+  },
+  "homepage": "https://github.com/CassieRyu/Cypress-Cucumber#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.17.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/common/**/*.{js,ts}",
+      "cypress/e2e/stepDef/**/*.{js,ts}"
+    ]
+  }
+}
