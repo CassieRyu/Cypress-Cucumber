@@ -5,6 +5,9 @@ class AliasingPage {
     commnetsBtn: () => cy.get('.network-btn'),
   };
 
+  visitAliasingPage() {
+    this.elements.visitPage();
+  }
   firstRow() {
     // Alias a DOM element for use later
     // We don't have to traverse to the element
@@ -26,7 +29,7 @@ class AliasingPage {
       .should('have.class', 'btn-success')
       .and('contain', 'Changed');
   }
-  requestComments() {
+  requestComments(newComments) {
     // Alias the route to wait for its response
     // cy.intercept();
     cy.intercept('GET', 'comments/*').as('getComment');
@@ -36,7 +39,10 @@ class AliasingPage {
     this.elements.commnetsBtn().click();
 
     // https://on.cypress.io/wait
-    cy.wait('@getComment').its('status').should('eq', 200);
+    // cy.wait('@getComment').its('status').should('eq', 200);
+    cy.get('@getComment').then(console.log);
+    cy.wait('@getComment').its('response.statusCode').should('eq', 200);
+    cy.log('a new commment added: ' + newComments);
   }
 }
 
