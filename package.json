@@ -1,10 +1,12 @@
 {
   "name": "cypress-cucumber",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sample Cypress framework with cucumber",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test_smoke": "cypress run --headless --browser chrome --spec 'cypress/e2e/**/*Smoke.feature'",
+    "test_auth": "cypress run --spec 'cypress/e2e/**/AuthenticationSmoke.feature' --headless --browser chrome ",
+    "test_regression": "cypress run --headless --browser chrome"
   },
   "repository": {
     "type": "git",
@@ -12,10 +14,6 @@
   },
   "author": "shan liu",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CassieRyu/Cypress-Cucumber/issues"
-  },
-  "homepage": "https://github.com/CassieRyu/Cypress-Cucumber#readme",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^18.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
@@ -28,6 +26,8 @@
     "stepDefinitions": [
       "cypress/e2e/common/**/*.{js,ts}",
       "cypress/e2e/stepDef/**/*.{js,ts}"
-    ]
+    ],
+    "filterSpecs": true,
+    "omitFiltered": true
   }
 }

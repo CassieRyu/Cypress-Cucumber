@@ -36,9 +36,7 @@ module.exports = defineConfig({
     setupNodeEvents,
     //supportFile:false,
     baseUrl: 'https://example.cypress.io',
-    specPattern: [
-      './cypress/e2e/**/*.{feature,features}',
-      './cypress/e2e/[filepath]/**/*.{feature,features}',
-    ],
+    specPattern: './cypress/e2e/**/*.{feature,features}',
+    video: false,
   },
 });
