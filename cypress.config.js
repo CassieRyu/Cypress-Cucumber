@@ -26,7 +26,7 @@ module.exports = defineConfig({
     json: true,
   },
   screenshotOnRunFailure: true,
-  screenshotsFolder: './reports/screenshots',
+  screenshotsFolder: './reports/mochawesome-report/screenshots',
   defaultCommandTimeout: 3000,
   pageLoadTimeout: 3000,
   e2e: {

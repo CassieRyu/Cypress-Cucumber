@@ -31,7 +31,7 @@ class ActionPage {
       // Delay each keypress by 0.1 sec
       .type(userEmaill, { delay: 100 })
       .should('have.value', userEmaill);
-
+    cy.mobileView();
     this.elements
       .describeArea()
       // Ignore error checking prior to type

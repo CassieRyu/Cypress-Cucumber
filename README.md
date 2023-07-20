@@ -20,8 +20,28 @@ npm install
 
 ## Test
 
-To open test explorer
+### To open test explorer
 
 ```
 npx cypress open
 ```
+
+### Execute test
+
+```
+npm run test_smoke
+```
+
+or
+
+```
+npm run test_regression
+```
+
+### Generate report
+
+```
+npm run merge_report
+```
+
+Then you able to find the html report under `./reports/mochawesome` folder

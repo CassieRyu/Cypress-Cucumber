@@ -23,3 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('mobileView', (width = 375, height = 812) => {
+  // default use iPhone-x size
+  cy.viewport(width, height);
+});
