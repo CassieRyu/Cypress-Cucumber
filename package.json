@@ -4,9 +4,10 @@
   "description": "Sample Cypress framework with cucumber",
   "main": "index.js",
   "scripts": {
-    "test_smoke": "cypress run --headless --browser chrome --spec 'cypress/e2e/**/*Smoke.feature'",
-    "test_auth": "cypress run --spec 'cypress/e2e/**/AuthenticationSmoke.feature' --headless --browser chrome ",
-    "test_regression": "cypress run --headless --browser chrome"
+    "test_smoke": "cypress run --spec 'cypress/e2e/**/*Smoke.feature' --headless --browser chrome",
+    "test_auth": "cypress run --spec 'cypress/e2e/**/AuthenticationSmoke.feature' --headless --browser chrome",
+    "test_regression": "cypress run --headless --browser chrome",
+    "merge_report": "NOW=$(date +%Y-%m-%d_%H-%M-%S) && mochawesome-merge ./reports/mochawesome-report/mochawesome*.json -o ./reports/mochawesome-report/report-${NOW}.json && marge ./reports/mochawesome-report/report-${NOW}.json --reportDir ./reports/mochawesome-report/ --inline && rm -rf ./reports/mochawesome-report/mochawesome*.json && rm ./reports/mochawesome-report/report-${NOW}.json  --autoOpen=true"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,6 @@
     "stepDefinitions": [
       "cypress/e2e/common/**/*.{js,ts}",
       "cypress/e2e/stepDef/**/*.{js,ts}"
-    ],
-    "filterSpecs": true,
-    "omitFiltered": true
+    ]
   }
 }

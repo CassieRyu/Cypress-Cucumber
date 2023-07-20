@@ -17,19 +17,18 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
-  reporter: '../node_modules/mochawesome/src/mochawesome.js',
+  reporter: 'mochawesome',
   reporterOptions: {
-    reportDir: './cypress/reports/mochawesome-report',
-    reportPageTitle: 'Shan Test report',
-    charts: true,
+    reportDir: './reports/mochawesome-report',
+    quite: true,
     overwrite: false,
     html: false,
     json: true,
   },
-
-  screenshotsFolder: './cypress/reports/mochawesome-report/assets',
-  defaultCommandTimeout: 100000,
-  pageLoadTimeout: 100000,
+  screenshotOnRunFailure: true,
+  screenshotsFolder: './reports/screenshots',
+  defaultCommandTimeout: 3000,
+  pageLoadTimeout: 3000,
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
